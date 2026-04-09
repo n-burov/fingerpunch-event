@@ -129,8 +129,9 @@
       top: 20px;
       left: 30px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 4px;
       z-index: 10;
     }
     
@@ -147,13 +148,14 @@
     }
     
     .realm-name {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #d4a090;
-      text-shadow: 0 0 15px #8b2020, 0 2px 4px #000000;
-      font-family: 'Palatino', 'Georgia', serif;
-      letter-spacing: 2px;
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #b89080;
+      text-shadow: 0 0 8px #8b3a3a80;
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      letter-spacing: 1px;
       text-transform: uppercase;
+      opacity: 0.8;
     }
     
     /* Адаптив для мобильных */
@@ -161,7 +163,7 @@
       .realm-header {
         top: 12px;
         left: 16px;
-        gap: 8px;
+        gap: 2px;
       }
       
       .realm-logo {
@@ -170,7 +172,7 @@
       }
       
       .realm-name {
-        font-size: 1.1rem;
+        font-size: 0.75rem;
       }
     }
     
@@ -179,13 +181,7 @@
         position: relative;
         top: 0;
         left: 0;
-        justify-content: center;
         margin-bottom: 15px;
-      }
-      
-      .lang-switcher {
-        top: 12px;
-        right: 16px;
       }
     }
     
