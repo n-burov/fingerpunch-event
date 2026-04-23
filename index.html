@@ -522,7 +522,7 @@
     <div class="info-grid">
       <div class="info-item">
         <div class="info-label" data-lang="whenLabel">📅 When</div>
-        <div class="info-text"><strong id="whenDateTime">Saturday, April 25, 2026 · 3:00 PM Server Time (6:00 PM MSK)</strong></div>
+        <div class="info-text"><strong id="whenDateTime">Saturday, April 25, 2026 · 3:00 PM Server Time</strong></div>
       </div>
       <div class="info-item">
         <div class="info-label" data-lang="whereLabel">📍 Location</div>
@@ -605,7 +605,7 @@
         subtitle: "Low-Level WPVP · Levels 15–30",
         timerLabel: "Battle begins in",
         days: "days", hours: "hours", minutes: "minutes", seconds: "seconds",
-        eventDateDisplay: "Saturday, April 25, 2026 · 3:00 PM Server Time (6:00 PM MSK)",
+        eventDateDisplay: "Saturday, April 25, 2026 · 3:00 PM Server Time",
         eventStarted: "BATTLE HAS BEGUN! FIGHT! 🔥",
         mapCaption: "Battlefield: Redridge Mountains — between the lake and the mountains",
         infoTitle: "⚔️ Battle Details ⚔️",
@@ -707,7 +707,7 @@
         if (eventDateMSK - now <= 0) {
           whenDateTime.textContent = currentLang === 'en' ? 'BATTLE STARTED!' : 'БИТВА НАЧАЛАСЬ!';
         } else {
-          whenDateTime.textContent = currentLang === 'en' ? 'Saturday, April 25, 2026 · 3:00 PM Server Time (6:00 PM MSK)' : 'Суббота, 25 апреля 2026 · 15:00 серверного времени (18:00 МСК)';
+          whenDateTime.textContent = currentLang === 'en' ? 'Saturday, April 25, 2026 · 3:00 PM Server Time' : 'Суббота, 25 апреля 2026 · 15:00 серверного времени (18:00 МСК)';
         }
       }
     }
