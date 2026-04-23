@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Gurubashi Arena — Tel'Abim</title>
+  <title>Redridge War — Gurubashi</title>
   <style>
     * {
       margin: 0;
@@ -183,37 +183,25 @@
       box-shadow: 0 0 15px #b04a4a;
     }
 
-    /* Логотип и реалм */
-    .realm-header {
-      position: absolute;
-      top: 20px;
-      left: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      z-index: 10;
-    }
-
-    .realm-logo {
-      width: 96px;
-      height: 96px;
-      object-fit: contain;
-      filter: drop-shadow(0 0 15px #8b3a3a80);
-    }
-
-    .realm-name {
-      font-size: 0.9rem;
-      font-weight: 400;
-      color: #b89080;
-      text-shadow: 0 0 8px #8b3a3a80;
-      font-family: 'Segoe UI', 'Arial', sans-serif;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      opacity: 0.8;
-    }
-
     /* Заголовки */
+    .realm-badge {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .realm-tag {
+      display: inline-block;
+      background: rgba(139, 58, 58, 0.3);
+      border: 1px solid #8b5a5a;
+      color: #d4a090;
+      padding: 6px 20px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      backdrop-filter: blur(4px);
+    }
+
     h1 {
       font-size: 3.2rem;
       font-weight: 900;
@@ -222,7 +210,7 @@
       text-align: center;
       color: #d4a090;
       text-shadow: 0 0 20px #8b2020, 0 4px 8px #000000, 0 1px 0 #3a1515;
-      margin: 40px 0 8px;
+      margin: 10px 0 8px;
       word-break: break-word;
       font-family: 'Palatino', 'Georgia', serif;
     }
@@ -312,6 +300,27 @@
       border-right: 4px solid #a05050;
     }
 
+    /* КАРТА */
+    .map-section {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .map-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 24px;
+      border: 2px solid #7a4545;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.7), 0 0 20px rgba(139, 58, 58, 0.3);
+    }
+
+    .map-caption {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #a08070;
+      font-style: italic;
+    }
+
     /* ИНФОРМАЦИЯ */
     .info-panel {
       background: #0a0606d0;
@@ -356,69 +365,13 @@
     }
 
     .info-text {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       line-height: 1.6;
       color: #d0c0b0;
     }
 
     .info-text strong {
       color: #e0a080;
-    }
-
-    /* ЛОР */
-    .lore-section {
-      margin-top: 25px;
-      padding: 20px 20px 10px;
-      background: #05030360;
-      border-radius: 24px;
-      border: 1px solid #5a3030;
-    }
-
-    .lore-toggle {
-      cursor: pointer;
-      color: #b88070;
-      font-size: 1.2rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 15px;
-      user-select: none;
-    }
-
-    .lore-toggle:hover {
-      color: #d8a090;
-    }
-
-    .lore-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      font-family: 'Georgia', serif;
-      color: #c0a898;
-      line-height: 1.7;
-      font-size: 1.05rem;
-      white-space: pre-line;
-    }
-
-    .lore-content.open {
-      max-height: 800px;
-      overflow-y: auto;
-      padding-right: 10px;
-    }
-
-    .lore-content p {
-      margin-bottom: 16px;
-    }
-
-    .organizer-tag {
-      margin-top: 20px;
-      text-align: right;
-      font-style: italic;
-      color: #a07060;
-      border-top: 1px solid #5a3838;
-      padding-top: 12px;
     }
 
     /* ССЫЛКИ */
@@ -512,10 +465,6 @@
       .info-title {
         font-size: 1.6rem;
       }
-      .realm-logo {
-        width: 64px;
-        height: 64px;
-      }
       .lang-switcher {
         top: 12px;
         right: 16px;
@@ -537,24 +486,21 @@
 
 <div class="wrapper">
   
-  <!-- Логотип и реалм -->
-  <div class="realm-header">
-    <img src="img/logo.png" alt="Tel'Abim" class="realm-logo" />
-    <span class="realm-name">Tel'Abim</span>
-  </div>
-
   <!-- Переключатель языков -->
   <div class="lang-switcher">
     <button class="lang-btn active" id="langEn" title="English">🇬🇧</button>
     <button class="lang-btn" id="langRu" title="Русский">🇷🇺</button>
   </div>
 
-  <h1 data-lang="title">GURUBASHI ARENA</h1>
-  <div class="subtitle" data-lang="subtitle">TEL'ABIM · CHEST SPAWN</div>
+  <div class="realm-badge">
+    <span class="realm-tag" data-lang="realmTag">Project Epoch · Gurubashi</span>
+  </div>
+  <h1 data-lang="title">REDRIDGE WAR</h1>
+  <div class="subtitle" data-lang="subtitle">Low-Level WPVP · Levels 15–30</div>
 
   <!-- ТАЙМЕР -->
   <div class="timer-section">
-    <div class="timer-label" data-lang="timerLabel">CHEST SPAWNS IN</div>
+    <div class="timer-label" data-lang="timerLabel">Battle begins in</div>
     <div class="countdown" id="countdown">
       <div class="timer-unit"><span class="timer-number" id="days">00</span><span class="timer-caption" data-lang="days">days</span></div>
       <div class="timer-unit"><span class="timer-number" id="hours">00</span><span class="timer-caption" data-lang="hours">hours</span></div>
@@ -564,58 +510,66 @@
     <div class="event-date-full" id="eventDateDisplay">Loading date...</div>
   </div>
 
+  <!-- КАРТА -->
+  <div class="map-section">
+    <img src="img/map.png" alt="Redridge War Map" class="map-image" />
+    <div class="map-caption" data-lang="mapCaption">Battlefield: Redridge Mountains — between the lake and the mountains</div>
+  </div>
+
   <!-- ИНФОРМАЦИЯ О ИВЕНТЕ -->
   <div class="info-panel">
-    <div class="info-title" data-lang="infoTitle">⚔️ Arena Rules & Rewards ⚔️</div>
+    <div class="info-title" data-lang="infoTitle">⚔️ Battle Details ⚔️</div>
     <div class="info-grid">
       <div class="info-item">
-        <div class="info-label" data-lang="whenLabel">📅 Spawn Time</div>
-        <div class="info-text"><strong id="whenDateTime">Wednesday, April 16, 2026 · 19:00 CEST (20:00 MSK)</strong></div>
+        <div class="info-label" data-lang="whenLabel">📅 When</div>
+        <div class="info-text"><strong id="whenDateTime">Saturday, April 25, 2026 · 3:00 PM Server Time (6:00 PM MSK)</strong></div>
       </div>
       <div class="info-item">
         <div class="info-label" data-lang="whereLabel">📍 Location</div>
-        <div class="info-text"><strong>Gurubashi Arena, Stranglethorn Vale</strong></div>
+        <div class="info-text"><strong>Redridge Mountains</strong><br><span data-lang="whereDesc">Strip between the lake and the mountains</span></div>
       </div>
       <div class="info-item">
-        <div class="info-label" data-lang="rewardLabel">💰 Chest Reward</div>
-        <div class="info-text"><strong>500 Gold + 3x Fashion Coin pouches (5 in each)</strong> <span data-lang="rewardDesc">to the party that loots the chest</span></div>
+        <div class="info-label" data-lang="levelsLabel">⚔️ Level Range</div>
+        <div class="info-text"><strong>15–30</strong> <span data-lang="levelsDesc">Curated WPVP for leveling characters</span></div>
       </div>
       <div class="info-item">
-        <div class="info-label" data-lang="rulesLabel">⚔️ Rules</div>
-        <div class="info-text"><span data-lang="rulesDesc">Bring your raid/party. Whoever loots first — wins.</span></div>
+        <div class="info-label" data-lang="allianceLabel">🔵 Alliance</div>
+        <div class="info-text"><span data-lang="allianceDesc">Rally at crossroads with Elwynn Forest & Duskwood. Come on foot.</span></div>
       </div>
-    </div>
-    
-    <!-- ЛОР -->
-    <div class="lore-section">
-      <div class="lore-toggle" id="loreToggle">
-        <span>📖 ▼</span> <span data-lang="loreToggle">Fingerpunch's Tale — Read</span>
+      <div class="info-item">
+        <div class="info-label" data-lang="hordeLabel">🔴 Horde</div>
+        <div class="info-text"><span data-lang="hordeDesc">Summoned by warlocks at the foot of Stonewatch Keep.</span></div>
       </div>
-      <div class="lore-content" id="loreContent">
-        <p data-lang="loreText1"><em>"Night sea quiet. Too quiet. Mi float low, only eyes above water. Salt bite mi skin. Voices wake again. 'Gold…' 'Take it…' 'Blood…'"</em></p>
-        <p data-lang="loreText2">Mi see it. Ship. Heavy. Slow. Mi swim. Silent. Cold wrap mi body, but mi whisper small magic. Frost numb mi limbs, arcane hush mi movement. No splash. No sound. Mi climb. Deck creak. Guard turn. Too late. Blade slip in. Mi catch him before he drop. Lay him down soft. "More…" Next one get a flicker. Tiny flame inna him face. Him blink. Mi cut him throat while him blind. Blood quiet. Good.</p>
-        <p data-lang="loreText3">Cabin. Captain counting gold. Mi blink — small arcane shimmer. Him hesitate. Mi smash him skull. Chest mine. Heavy. Voices pleased. "Take it… go… spill more…" Ship Bells, Alarm raised. Mi gone. Overboard. Water swallow mi. Mi sink, hold breath, whisper again. Arcane keep mi lungs calm, body light. Mi swim deep, far. No chase. Only silence. And di voices inna mi head, I trust them voices, I will do what they say. "Arena…" "Hide it…"</p>
-        <p data-lang="loreText4">So mi go Gurubashi. Dig. Bury de chest. Sand cover secret. Mi stand up, blood still on mi hands, and laugh. Because dem going come. All of dem. For gold. For glory. For death. And when dem fight… When sand drink deep… Mi slip away. Booty Bay waiting. Voices still whisper. "More blood… soon…"</p>
-        <div class="organizer-tag" data-lang="organizer">— Fingerpunch, Troll Mage, Kor'Kron Enforcers</div>
+      <div class="info-item">
+        <div class="info-label" data-lang="guardsLabel">🛡️ Level 60 Guards</div>
+        <div class="info-text"><span data-lang="guardsDesc">Both factions' 60s stand side by side to prevent griefing.</span></div>
+      </div>
+      <div class="info-item">
+        <div class="info-label" data-lang="spiritLabel">✨ Spirit Healers</div>
+        <div class="info-text"><span data-lang="spiritDesc">Behind both sides. Falling back onto the bridge = losing the battle.</span></div>
+      </div>
+      <div class="info-item">
+        <div class="info-label" data-lang="roundsLabel">🔄 Duration</div>
+        <div class="info-text"><span data-lang="roundsDesc">Up to 1 hour. Multiple rounds possible depending on pacing.</span></div>
       </div>
     </div>
 
     <div style="margin-top: 20px; font-style: italic; color: #b09080; border-top: 1px solid #5a3535; padding-top: 16px;" data-lang="infoFooter">
-      ⚔️ Be there before the chest spawns! Bring your raid. Whoever loots first — takes the gold.
+      ⚔️ Putting the War into Warcraft. Welcome to Gurubashi!
     </div>
   </div>
 
   <!-- ССЫЛКИ -->
   <div class="links-section">
     <a href="https://discord.gg/hJGWD63WF2" class="wow-button" target="_blank" id="discordLink">🎧 DISCORD</a>
-    <a href="#" class="wow-button" target="_blank" id="rulesLink">📜 GUILD RULES</a>
+    <a href="#" class="wow-button" target="_blank" id="rulesLink">📜 SERVER INFO</a>
   </div>
 
   <!-- СЧЁТЧИК ПОСЕТИТЕЛЕЙ -->
   <div style="text-align: center; margin-top: 25px;">
     <div class="counter-container">
-      <span class="counter-label" data-lang="visitors">⚔️ Heroes answered the call</span>
-      <img src="https://hitwebcounter.com/counter/counter.php?page=21488977&style=0038&nbdigits=5&type=ip&initCount=0" 
+      <span class="counter-label" data-lang="visitors">⚔️ Warriors ready for battle</span>
+      <img src="https://hitwebcounter.com/counter/counter.php?page=21488244&style=0038&nbdigits=5&type=page&initCount=0" 
            alt="Visitor Counter" 
            class="counter-img" />
     </div>
@@ -625,7 +579,7 @@
   </div>
 
   <div class="footer-note" data-lang="footerNote">
-    Event by Fingerpunch · Kor'Kron Enforcers · Tel'Abim
+    Project Epoch · Gurubashi · #RedridgeWar
   </div>
 </div>
 
@@ -633,66 +587,81 @@
   (function() {
     "use strict";
 
-    // ---------- ДАТА ИВЕНТА: 16 апреля 2026, 20:00 МСК ----------
-    const eventDateMSK = new Date(Date.UTC(2026, 3, 16, 17, 0, 0)); // 20:00 МСК = 17:00 UTC
+    // ---------- ДАТА ИВЕНТА: 25 апреля 2026, 15:00 серверного времени ----------
+    // Серверное время = UTC-3 (когда в МСК 0:46, на сервере 21:45 предыдущего дня)
+    // 15:00 серверного времени = 18:00 UTC = 18:00 МСК? Нет.
+    // Если 0:46 МСК = 21:45 серверного (пред. дня), то разница = 3 часа 1 минута ~ 3 часа
+    // Серверное время = МСК - 3 часа
+    // 15:00 серверного = 18:00 МСК = 15:00 UTC
+    const eventDateMSK = new Date(Date.UTC(2026, 3, 25, 15, 0, 0)); // 15:00 UTC = 18:00 МСК = 15:00 серверного
     
     const discordURL = "https://discord.gg/hJGWD63WF2";
 
     // ---------- СЛОВАРИ ПЕРЕВОДОВ ----------
     const translations = {
       en: {
-        title: "GURUBASHI ARENA",
-        subtitle: "TEL'ABIM · CHEST SPAWN",
-        timerLabel: "CHEST SPAWNS IN",
+        realmTag: "Project Epoch · Gurubashi",
+        title: "REDRIDGE WAR",
+        subtitle: "Low-Level WPVP · Levels 15–30",
+        timerLabel: "Battle begins in",
         days: "days", hours: "hours", minutes: "minutes", seconds: "seconds",
-        eventDateDisplay: "Wednesday, April 16, 2026 · 19:00 CEST (20:00 MSK)",
-        eventStarted: "CHEST HAS SPAWNED! FIGHT! 🔥",
-        infoTitle: "⚔️ Arena Rules & Rewards ⚔️",
-        whenLabel: "📅 Spawn Time",
+        eventDateDisplay: "Saturday, April 25, 2026 · 3:00 PM Server Time (6:00 PM MSK)",
+        eventStarted: "BATTLE HAS BEGUN! FIGHT! 🔥",
+        mapCaption: "Battlefield: Redridge Mountains — between the lake and the mountains",
+        infoTitle: "⚔️ Battle Details ⚔️",
+        whenLabel: "📅 When",
         whereLabel: "📍 Location",
-        rewardLabel: "💰 Chest Reward",
-        rewardDesc: "to the party that loots the chest",
-        rulesLabel: "⚔️ Rules",
-        rulesDesc: "Bring your raid/party. Whoever loots first — wins.",
-        loreToggle: "📖 Fingerpunch's Tale — Read",
-        loreText1: '<em>"Night sea quiet. Too quiet. Mi float low, only eyes above water. Salt bite mi skin. Voices wake again. \'Gold…\' \'Take it…\' \'Blood…\'"</em>',
-        loreText2: 'Mi see it. Ship. Heavy. Slow. Mi swim. Silent. Cold wrap mi body, but mi whisper small magic. Frost numb mi limbs, arcane hush mi movement. No splash. No sound. Mi climb. Deck creak. Guard turn. Too late. Blade slip in. Mi catch him before he drop. Lay him down soft. "More…" Next one get a flicker. Tiny flame inna him face. Him blink. Mi cut him throat while him blind. Blood quiet. Good.',
-        loreText3: 'Cabin. Captain counting gold. Mi blink — small arcane shimmer. Him hesitate. Mi smash him skull. Chest mine. Heavy. Voices pleased. "Take it… go… spill more…" Ship Bells, Alarm raised. Mi gone. Overboard. Water swallow mi. Mi sink, hold breath, whisper again. Arcane keep mi lungs calm, body light. Mi swim deep, far. No chase. Only silence. And di voices inna mi head, I trust them voices, I will do what they say. "Arena…" "Hide it…"',
-        loreText4: 'So mi go Gurubashi. Dig. Bury de chest. Sand cover secret. Mi stand up, blood still on mi hands, and laugh. Because dem going come. All of dem. For gold. For glory. For death. And when dem fight… When sand drink deep… Mi slip away. Booty Bay waiting. Voices still whisper. "More blood… soon…"',
-        organizer: "— Fingerpunch, Troll Mage, Kor'Kron Enforcers",
-        infoFooter: "⚔️ Be there before the chest spawns! Bring your raid. Whoever loots first — takes the gold.",
-        visitors: "⚔️ Heroes answered the call",
+        whereDesc: "Strip between the lake and the mountains",
+        levelsLabel: "⚔️ Level Range",
+        levelsDesc: "Curated WPVP for leveling characters",
+        allianceLabel: "🔵 Alliance",
+        allianceDesc: "Rally at crossroads with Elwynn Forest & Duskwood. Come on foot.",
+        hordeLabel: "🔴 Horde",
+        hordeDesc: "Summoned by warlocks at the foot of Stonewatch Keep.",
+        guardsLabel: "🛡️ Level 60 Guards",
+        guardsDesc: "Both factions' 60s stand side by side to prevent griefing.",
+        spiritLabel: "✨ Spirit Healers",
+        spiritDesc: "Behind both sides. Falling back onto the bridge = losing the battle.",
+        roundsLabel: "🔄 Duration",
+        roundsDesc: "Up to 1 hour. Multiple rounds possible depending on pacing.",
+        infoFooter: "⚔️ Putting the War into Warcraft. Welcome to Gurubashi!",
+        visitors: "⚔️ Warriors ready for battle",
         counterNote: "Unique visitors since April 2026",
-        footerNote: "Event by Fingerpunch · Kor'Kron Enforcers · Tel'Abim",
+        footerNote: "Project Epoch · Gurubashi · #RedridgeWar",
         discordBtn: "🎧 DISCORD",
-        rulesBtn: "📜 GUILD RULES"
+        rulesBtn: "📜 SERVER INFO"
       },
       ru: {
-        title: "АРЕНА ГУРУБАШИ",
-        subtitle: "TEL'ABIM · ПОЯВЛЕНИЕ СУНДУКА",
-        timerLabel: "СУНДУК ПОЯВИТСЯ ЧЕРЕЗ",
+        realmTag: "Project Epoch · Gurubashi",
+        title: "БИТВА В РЕДРИДЖЕ",
+        subtitle: "WPVP для низких уровней · 15–30",
+        timerLabel: "Битва начнётся через",
         days: "дней", hours: "часов", minutes: "минут", seconds: "секунд",
-        eventDateDisplay: "Среда, 16 апреля 2026 · 20:00 МСК",
-        eventStarted: "СУНДУК ПОЯВИЛСЯ! В БОЙ! 🔥",
-        infoTitle: "⚔️ Правила Арены и Награды ⚔️",
-        whenLabel: "📅 Время появления",
+        eventDateDisplay: "Суббота, 25 апреля 2026 · 15:00 серверного времени (18:00 МСК)",
+        eventStarted: "БИТВА НАЧАЛАСЬ! В БОЙ! 🔥",
+        mapCaption: "Поле битвы: Редриджские горы — между озером и горами",
+        infoTitle: "⚔️ Детали битвы ⚔️",
+        whenLabel: "📅 Когда",
         whereLabel: "📍 Локация",
-        rewardLabel: "💰 Награда",
-        rewardDesc: "группе, которая заберёт добычу из сундука",
-        rulesLabel: "⚔️ Правила",
-        rulesDesc: "Ведите рейд/группу. Кто первый заберёт лут — тот победил.",
-        loreToggle: "📖 История Пальцебоя — Читать",
-        loreText1: '<em>"Ночное море тихое. Слишком тихое. Я плыву низко, только глаза над водой. Соль кусает кожу. Голоса просыпаются снова. \'Золото…\' \'Возьми его…\' \'Кровь…\'"</em>',
-        loreText2: 'Я вижу его. Корабль. Тяжёлый. Медленный. Я плыву. Бесшумно. Холод обнимает тело, но я шепчу магию. Мороз немеет конечности, тайная магия заглушает движения. Ни всплеска. Ни звука. Я взбираюсь. Палуба скрипит. Стражник оборачивается. Слишком поздно. Клинок входит. Я ловлю его, пока он не упал. Кладу тихо. "Ещё…" Следующего ослепляет вспышка. Крошечное пламя в лицо. Он моргает. Я режу ему горло, пока он слеп. Кровь тихая. Хорошо.',
-        loreText3: 'Каюта. Капитан считает золото. Я мерцаю — малый тайный блеск. Он медлит. Я разбиваю ему череп. Сундук мой. Тяжёлый. Голоса довольны. "Бери… иди… пролей больше…" Корабельный колокол, тревога. Я исчез. За борт. Вода глотает меня. Я тону, задерживаю дыхание, шепчу снова. Тайная магия успокаивает лёгкие, тело невесомо. Я плыву глубоко, далеко. Погони нет. Только тишина. И голоса в голове, я доверяю им, я сделаю, что они скажут. "Арена…" "Спрячь его…"',
-        loreText4: 'И я иду в Гурубаши. Копаю. Закапываю сундук. Песок скрывает тайну. Я встаю, кровь всё ещё на руках, и смеюсь. Потому что они придут. Все они. За золотом. За славой. За смертью. И когда они сразятся… Когда песок напьётся вдоволь… Я ускользну. Пиратская Бухта ждёт. Голоса всё ещё шепчут. "Ещё крови… скоро…"',
-        organizer: "— Пальцебой, тролль-маг, Кор'Кронские Каратели",
-        infoFooter: "⚔️ Будьте там до появления сундука! Ведите рейд. Кто первый заберёт лут — забирает золото.",
-        visitors: "⚔️ Героев откликнулось",
+        whereDesc: "Полоса между озером и горами",
+        levelsLabel: "⚔️ Уровни",
+        levelsDesc: "Организованный WPVP для прокачивающихся персонажей",
+        allianceLabel: "🔵 Альянс",
+        allianceDesc: "Сбор на перекрёстке с Элвиннским лесом и Сумеречным лесом. Приходят пешком.",
+        hordeLabel: "🔴 Орда",
+        hordeDesc: "Призыв чернокнижниками у подножия Сторожевой Башни.",
+        guardsLabel: "🛡️ Охрана 60-го уровня",
+        guardsDesc: "60-е уровни обеих фракций стоят плечом к плечу против гриферов.",
+        spiritLabel: "✨ Ангелы воскрешения",
+        spiritDesc: "Позади обеих сторон. Отступление на мост = поражение в битве.",
+        roundsLabel: "🔄 Длительность",
+        roundsDesc: "До 1 часа. Возможно несколько раундов в зависимости от темпа.",
+        infoFooter: "⚔️ Вкладываем войну в Warcraft. Добро пожаловать на Gurubashi!",
+        visitors: "⚔️ Воинов готовы к битве",
         counterNote: "Уникальных посетителей с апреля 2026",
-        footerNote: "Ивент от Пальцебоя · Кор'Кронские Каратели · Tel'Abim",
+        footerNote: "Project Epoch · Gurubashi · #RedridgeWar",
         discordBtn: "🎧 DISCORD",
-        rulesBtn: "📜 ПРАВИЛА ГИЛЬДИИ"
+        rulesBtn: "📜 О СЕРВЕРЕ"
       }
     };
 
@@ -707,22 +676,14 @@
     const rulesBtn = document.getElementById('rulesLink');
     const langEnBtn = document.getElementById('langEn');
     const langRuBtn = document.getElementById('langRu');
-    const loreToggle = document.getElementById('loreToggle');
-    const loreContent = document.getElementById('loreContent');
 
     if(discordBtn) discordBtn.href = discordURL;
     if(rulesBtn) rulesBtn.href = "#";
 
-    loreToggle.addEventListener('click', () => {
-      loreContent.classList.toggle('open');
-      const arrow = loreToggle.querySelector('span:first-child');
-      arrow.textContent = loreContent.classList.contains('open') ? '📖 ▲' : '📖 ▼';
-    });
-
     let currentLang = 'en';
     function setLanguage(lang) {
       currentLang = lang;
-      localStorage.setItem('arenaLang', lang);
+      localStorage.setItem('redridgeLang', lang);
       langEnBtn.classList.toggle('active', lang === 'en');
       langRuBtn.classList.toggle('active', lang === 'ru');
       document.documentElement.lang = lang;
@@ -744,9 +705,9 @@
       if (whenDateTime) {
         const now = new Date();
         if (eventDateMSK - now <= 0) {
-          whenDateTime.textContent = currentLang === 'en' ? 'CHEST SPAWNED!' : 'СУНДУК ПОЯВИЛСЯ!';
+          whenDateTime.textContent = currentLang === 'en' ? 'BATTLE STARTED!' : 'БИТВА НАЧАЛАСЬ!';
         } else {
-          whenDateTime.textContent = currentLang === 'en' ? 'Wednesday, April 16, 2026 · 19:00 CEST (20:00 MSK)' : 'Среда, 16 апреля 2026 · 19:00 CEST (20:00 МСК)';
+          whenDateTime.textContent = currentLang === 'en' ? 'Saturday, April 25, 2026 · 3:00 PM Server Time (6:00 PM MSK)' : 'Суббота, 25 апреля 2026 · 15:00 серверного времени (18:00 МСК)';
         }
       }
     }
@@ -756,7 +717,7 @@
       if (diff <= 0) {
         eventDateDisplay.textContent = translations[currentLang].eventStarted;
       } else {
-        eventDateDisplay.textContent = currentLang === 'en' ? 'Wednesday, April 16, 2026 · 19:00 CEST (20:00 MSK)' : 'Среда, 16 апреля 2026 · 19:00 CEST (20:00 МСК)';
+        eventDateDisplay.textContent = currentLang === 'en' ? 'Saturday, April 25, 2026 · 3:00 PM Server Time (6:00 PM MSK)' : 'Суббота, 25 апреля 2026 · 15:00 серверного времени (18:00 МСК)';
       }
     }
 
@@ -777,7 +738,7 @@
     }
 
     function init() {
-      const savedLang = localStorage.getItem('arenaLang');
+      const savedLang = localStorage.getItem('redridgeLang');
       setLanguage(savedLang && (savedLang === 'en' || savedLang === 'ru') ? savedLang : 'en');
       updateCountdown();
       setInterval(updateCountdown, 1000);
